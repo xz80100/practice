@@ -21,7 +21,7 @@ for l in location:  #跑location裡面的資料，會得出dictionary資料
 
     a = Location()
     a.from_json(l)
-    #a.weatherelement.humd(有問題)
+
     print(a.__dict__)
 
 
