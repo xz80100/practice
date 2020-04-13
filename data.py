@@ -20,10 +20,7 @@ class Location:
         self.weatherElement.from_json(json_data['weatherElement'])
 
 
-        weather_element_json = json_data.get('weather_element')
-        element = WeatherElement()
-        element.from_json(weather_element_json)
-        self.weatherelement = element
+
 
 class WeatherElement:
     def __init__(self, wdir=None, wdsd=None, temp=None, humd=None, h_24r=None):
