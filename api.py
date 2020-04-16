@@ -20,7 +20,7 @@ for l in location:  #跑location裡面的資料，會得出dictionary資料
     element = WeatherElement()
     element.from_json(weather_element_json)
     a.weather_element = element
-    
+
     allLocactions.append(a)
 
     #lat = l.get('lat')
