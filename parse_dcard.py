@@ -34,20 +34,20 @@ for i in range(len(meta_datas)):
 
 #獲得文章標題
 titles = []
-for x in soup.find_all('h2', {'class': 'sc-1v1d5rx-3 eih0FJ'}):
+for x in soup.find_all('h2', {'class': 'sc-1v1d5rx-3 eihOFJ'}):
     titles.append(x.text)
 print(titles)
 
 #獲得文章連結
 hrefs = []
-for x in soup.find_all('a', {'classa': 'sc-1v1d5rx-4' 'gCVegi'}):
+for x in soup.find_all('a', {'class': 'sc-1v1d5rx-4 gCVegi'}):
     hrefs.append(x['href'])
 
 #從相對連結及url組成絕對連結
 links = []
 for href in hrefs:
     links.append(urljoin(url, href))
-    print(links)
+print(links)
 
 for i in range(len(forums)):
     print(forums[i], titles[i], links[i])
