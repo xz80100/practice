@@ -11,7 +11,18 @@ records = json_content.get('records')
 location = records.get('location') #從location裡面拿取資料
 
 #取得欄位資料，location是list，解析這個資料
+allLocactions = []
 for l in location:  #跑location裡面的資料，會得出dictionary資料
+    a = Location()
+    a.from_json(l)
+
+    weather_element_json = l.get('weatherElement')
+    element = WeatherElement()
+    element.from_json(weather_element_json)
+    a.weather_element = element
+    
+    allLocactions.append(a)
+
     #lat = l.get('lat')
     #lon = l.get('lon')
     #locationName = l.get('locationName')
@@ -19,21 +30,16 @@ for l in location:  #跑location裡面的資料，會得出dictionary資料
     #time = l.get('time').get('obsTime')
     #print(locationName, stationId, time)
 
-    a = Location()
-    a.from_json(l)
-
-    print(a.__dict__)
-
-
-
-
+    # a = Location()
+    # a.from_json(l)
+    # print(a.__dict__)
 
 #取得觀測資料，weatherElement是list
-weatherElement = l.get('weatherElement')
-for element in weatherElement:
-    elementName = element.get('elementName')
-    elementValue = element.get('elementValue')
-    print(elementName, elementValue)
+# weatherElement = l.get('weatherElement')
+# for element in weatherElement:
+#     elementName = element.get('elementName')
+#     elementValue = element.get('elementValue')
+#     print(elementName, elementValue)
 
 
 
